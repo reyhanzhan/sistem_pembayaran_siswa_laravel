@@ -1,0 +1,4 @@
+/* Atur lebar sidebar */
+.sidebar {
+    width: 250px !important; /* Ganti 250px sesuai kebutuhan */
+}
