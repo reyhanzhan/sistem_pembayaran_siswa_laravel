@@ -10,13 +10,15 @@
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet" />
     <!-- Optional: FontAwesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    
     <link rel="stylesheet" href="{{ asset('custom.css') }}">
+    @yield('styles')
 </head>
 
 <style>
     * {
-        outline: solid 1px transparent;
         outline: solid 1px green;
+        outline: solid 1px transparent;
     }
 </style>
 
@@ -62,6 +64,7 @@
     <!-- Optional: jQuery & Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    @yield('scripts')
 
 </body>
 
