@@ -40,6 +40,9 @@
     </div>
 
     <button class="btn btn-primary" type="submit">Simpan</button>
-    <a href="{{ route('tagihan.index', $siswa->id) }}" class="btn btn-secondary">Batal</a>
+    {{-- <a href="{{ route('tagihan.index', $siswa->id) }}" class="btn btn-secondary">Batal</a> --}}
+    <a href="{{ route('siswa.tagihan.index', ['siswa' => $siswa->id]) }}" class="btn btn-secondary">Kembali</a>
+    {{-- <a href="{{ route('siswa.tagihan.index', ['siswa' => $siswa->id]) }}">Lihat Tagihan</a> --}}
+    
 </form>
 @endsection

@@ -39,7 +39,8 @@ class TagihanController extends Controller
 
         Tagihan::create($validated);
 
-        return redirect()->route('tagihan.index', $siswa->id)->with('success', 'Tagihan berhasil ditambahkan.');
+        // return redirect()->route('tagihan.index', $siswa->id)->with('success', 'Tagihan berhasil ditambahkan.');
+        return redirect()->route('siswa.tagihan.index', $siswa->id)->with('success', 'Tagihan berhasil ditambahkan.');
     }
 
     // Tampilkan form edit tagihan

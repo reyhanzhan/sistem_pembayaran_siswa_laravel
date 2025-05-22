@@ -72,7 +72,10 @@
                 <td>{{ $siswa->kelas->tahunAjaran->tahun ?? '-' }}</td>
                 <td>{{ $siswa->no_telfon }}</td>
                 <td>
-                    <a href="{{ route('tagihan.index', $siswa->id) }}">Lihat Tagihan</a>
+                    <a href="{{ route('siswa.tagihan.index', ['siswa' => $siswa->id]) }}">Lihat Tagihan</a>
+                    
+                   
+                    
                 </td>
             </tr>
         @empty

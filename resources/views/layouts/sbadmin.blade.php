@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SB Admin 2 Dashboard</title>
+    <title>SMK Kartini Surabaya</title>
 
     <!-- Link CSS SB Admin 2 -->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet" />
