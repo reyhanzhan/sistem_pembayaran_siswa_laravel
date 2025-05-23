@@ -8,6 +8,7 @@
 
     <!-- Link CSS SB Admin 2 -->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet" />
+    <link rel="icon" href="{{ asset('img/logo_kartini.jpeg') }}" type="image/x-icon" />
     <!-- Optional: FontAwesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     
@@ -64,6 +65,13 @@
     <!-- Optional: jQuery & Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    document.getElementById('sidebarToggleTop').addEventListener('click', function () {
+        document.body.classList.toggle('sidebar-toggled');
+        document.getElementById('accordionSidebar').classList.toggle('toggled');
+    });
+</script>
+
     @yield('scripts')
 
 </body>

@@ -20,9 +20,18 @@ class UserSeeder extends Seeder
             [
                 'name' => 'joko',
                 'password' => Hash::make('password123'),
+                'role' => 'admin', // Role admin
                 'created_at' => now(),
                 'updated_at' => now(),
-            ]
+            ],
+            [
+                'name' => 'pak kepsek',
+                'password' => Hash::make('password123'),
+                'role' => 'kepsek', // Role kepala sekolah
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            
         ];
 
         // Insert atau update pengguna (menghindari duplikasi)

@@ -7,6 +7,7 @@
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="{{ asset('img/logo_kartini.jpeg') }}" type="image/x-icon" />
     <style>
         body {
             background: linear-gradient(135deg, #1e3c72, #2a5298);

@@ -69,4 +69,25 @@ class SiswaController extends Controller
 
         return view('siswa.show', compact('siswa', 'tagihan'));
     }
+
+    public function lihatTagihan(Request $request)
+    {
+        $query = Siswa::query()->with(['kelas.tahunAjaran']);
+
+        if ($request->nisn) {
+            $query->where('nisn', 'like', '%' . $request->nisn . '%');
+        }
+        if ($request->nama) {
+            $query->where('nama', 'like', '%' . $request->nama . '%');
+        }
+        if ($request->kelas_id) {
+            $query->where('kelas_id', $request->kelas_id);
+        }
+
+        $siswas = $query->get();
+        $kelasList = Kelas::all();
+        $noData = ($request->filled('nisn') || $request->filled('nama') || $request->filled('kelas_id')) && $siswas->isEmpty();
+
+        return view('lihat_tagihan.index', compact('siswas', 'kelasList', 'noData'));
+    }
 }

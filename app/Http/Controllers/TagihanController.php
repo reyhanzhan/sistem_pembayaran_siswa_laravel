@@ -63,7 +63,7 @@ class TagihanController extends Controller
 
         $tagihan->update($validated);
 
-        return redirect()->route('tagihan.index', $siswa->id)->with('success', 'Tagihan berhasil diperbarui.');
+        return redirect()->route('siswa.tagihan.index', $siswa->id)->with('success', 'Tagihan berhasil diperbarui.');
     }
 
     // Hapus tagihan
@@ -71,6 +71,15 @@ class TagihanController extends Controller
     {
         $tagihan->delete();
 
-        return redirect()->route('tagihan.index', $siswa->id)->with('success', 'Tagihan berhasil dihapus.');
+        return redirect()->route('siswa.tagihan.index', $siswa->id)->with('success', 'Tagihan berhasil dihapus.');
+    }
+
+    public function lihatTagihan(Siswa $siswa)
+    {
+        $tagihans = Tagihan::where('siswa_id', $siswa->id)
+            ->with(['jenisPembayaran'])
+            ->get();
+
+        return view('lihat_tagihan.tagihan', compact('tagihans', 'siswa'));
     }
 }

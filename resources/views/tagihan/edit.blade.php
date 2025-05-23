@@ -42,6 +42,6 @@
     </div>
 
     <button class="btn btn-primary" type="submit">Update</button>
-    <a href="{{ route('tagihan.index', $siswa->id) }}" class="btn btn-secondary">Batal</a>
+    <a href="{{ route('siswa.tagihan.index', $siswa->id) }}" class="btn btn-secondary">Batal</a>
 </form>
 @endsection
