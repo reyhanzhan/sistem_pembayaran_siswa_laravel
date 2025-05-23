@@ -30,8 +30,13 @@ class Tagihan extends Model
     }
 
     // Relasi ke JenisPembayaran
+    // public function jenisPembayaran()
+    // {
+    //     return $this->belongsTo(JenisPembayaran::class);
+    // }
+
     public function jenisPembayaran()
     {
-        return $this->belongsTo(JenisPembayaran::class);
+        return $this->belongsTo(JenisPembayaran::class, 'jenis_pembayaran_id');
     }
 }

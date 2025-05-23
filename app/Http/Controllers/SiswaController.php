@@ -6,14 +6,8 @@ use App\Models\Siswa;
 use App\Models\Kelas;
 use App\Models\Tagihan;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\Rule;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Auth;
-use App\Models\TahunAjaran;
-use App\Models\Pembayaran;
-
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\TagihanExport;
 
 class SiswaController extends Controller
 {
@@ -72,7 +66,7 @@ class SiswaController extends Controller
 
     public function lihatTagihan(Request $request)
     {
-        $query = Siswa::query()->with(['kelas.tahunAjaran']);
+        $query = Siswa::query()->with(['kelas.tahunAjaran', 'tagihan']);
 
         if ($request->nisn) {
             $query->where('nisn', 'like', '%' . $request->nisn . '%');
@@ -87,6 +81,12 @@ class SiswaController extends Controller
         $siswas = $query->get();
         $kelasList = Kelas::all();
         $noData = ($request->filled('nisn') || $request->filled('nama') || $request->filled('kelas_id')) && $siswas->isEmpty();
+
+        // Ekspor data ke Excel
+        if ($request->has('export') && $request->export === 'excel') {
+            $kelas_id = $request->input('kelas_id', null); // Null untuk semua data
+            return Excel::download(new TagihanExport($kelas_id), 'tagihan_siswa_' . ($kelas_id ? 'kelas_' . $kelas_id : 'all') . '.xlsx');
+        }
 
         return view('lihat_tagihan.index', compact('siswas', 'kelasList', 'noData'));
     }

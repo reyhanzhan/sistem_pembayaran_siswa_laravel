@@ -42,6 +42,25 @@
         </div>
     </form>
 
+    <!-- Tombol Ekspor -->
+    <div class="mb-4">
+        <form method="GET" action="{{ route('lihat-tagihan.index') }}">
+            <div class="form-row align-items-center">
+                <div class="col-auto">
+                    <select name="kelas_id" class="form-control">
+                        <option value="">Semua Kelas</option>
+                        @foreach($kelasList as $kelas)
+                            <option value="{{ $kelas->id }}">{{ $kelas->nama_kelas }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="col-auto">
+                    <button type="submit" name="export" value="excel" class="btn btn-success">Ekspor ke Excel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
     {{-- Pesan jika tidak ada data dari pencarian --}}
     @if($noData)
         <div class="alert alert-warning" role="alert">
