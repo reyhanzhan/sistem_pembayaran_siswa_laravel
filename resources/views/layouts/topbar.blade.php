@@ -33,8 +33,7 @@
     </a>
 
     <!-- Topbar Navbar kanan -->
-    <ul class="navbar-nav ml-auto">
-        <!-- User Information -->
+    {{-- <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
@@ -42,10 +41,7 @@
                     {{ Auth::user()->name ?? 'Guest' }}
                 </span>
                 <i class="fas fa-user-circle fa-2x text-gray-600"></i>
-
-                {{-- <img class="img-profile rounded-circle" src="https://via.placeholder.com/60" /> --}}
             </a>
-            <!-- Dropdown - User Information -->
         </li>
-    </ul>
+    </ul> --}}
 </nav>

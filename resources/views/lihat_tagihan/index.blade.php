@@ -69,6 +69,7 @@
     @endif
 
     {{-- Tabel daftar siswa --}}
+    <div class="table-responsive">
     <table class="table table-bordered table-hover">
         <thead>
             <tr>
@@ -107,6 +108,9 @@
             @endforelse
         </tbody>
     </table>
+    </div>
+
+    {{-- Link kembali ke halaman utama --}}
 @endsection
 
 @section('scripts')

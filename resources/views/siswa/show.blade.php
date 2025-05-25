@@ -50,6 +50,7 @@
 @endif
 
 {{-- Tabel daftar siswa --}}
+<div class="table-responsive">
 <table class="table table-bordered table-hover">
     <thead>
         <tr>
@@ -91,6 +92,9 @@
         @endforelse
     </tbody>
 </table>
+</div>
+
+{{-- Link untuk tambah siswa --}}
 
 @section('scripts')
 <script>

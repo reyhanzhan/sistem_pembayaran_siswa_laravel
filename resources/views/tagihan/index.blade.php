@@ -10,6 +10,7 @@
     <div class="alert alert-success">{{ session('success') }}</div>
 @endif
 
+<div class="table-responsive">
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -46,6 +47,9 @@
         @endforeach
     </tbody>
 </table>
+</div>
+
+{{-- Link kembali ke daftar siswa --}}
 
 <a href="{{ route('siswa.index') }}" class="btn btn-secondary mt-3">Kembali ke Daftar Siswa</a>
 @endsection
